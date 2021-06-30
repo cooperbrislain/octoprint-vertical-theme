@@ -8,6 +8,7 @@ $text-color: #FFF;
 $background-color: #333;
 $primary-color: #09D;
 $secondary-clor: #393;
+$color-blue: #0073ff;
 
 $vertical-screen-min-height: 1200px;
 
@@ -129,8 +130,13 @@ $vertical-screen-min-height: 1200px;
                 form {
 
                     input[type=number].input-mini {
-                        min-width: 50px;
-                        width: 50px;
+                        min-width: 45px;
+                        padding-right: 5px;
+                        padding-left: 3px;
+                    }
+
+                    button.btn {
+                        padding: 8px;
                     }
                 }
 
@@ -177,13 +183,31 @@ $vertical-screen-min-height: 1200px;
                         border-left: 1px solid #777;
                     }
                 }
+
+                &>div>div:nth-child(4) { // feed rate control box
+                    display: none;
+                }
             }
 
             #control-jog-general {
                 width: 100px;
             }
 
-            #control-jog-flowrate,
+            #control-jog-flowrate {
+                width: 200px;
+
+                label {
+                    float: left;
+                    display: none;
+                }
+
+                .btn {
+                    margin: 0;
+                    border-left: 1px solid;
+                    background-color: $color-blue;
+                }
+            }
+
             #control-jog-feedrate {
                 display: none;
             }
@@ -264,23 +288,6 @@ $vertical-screen-min-height: 1200px;
         }
     }
 
-// GENERAL
-
-    .muted {
-        display: none;
-    }
-
-    .tabbable {
-        display: block;
-        order: 2;
-        margin: 0;
-        width: 100%;
-
-        #tabs {
-            display: none; // TODO: come back to this later maybe?
-        }
-    }
-
 // NAVBAR
 
     #navbar {
@@ -332,4 +339,22 @@ $vertical-screen-min-height: 1200px;
             display: none;
         }
     }
+
+    // GENERAL ELEMENTS
+
+    .muted {
+        display: none;
+    }
+
+    .tabbable {
+        display: block;
+        order: 2;
+        margin: 0;
+        width: 100%;
+
+        #tabs {
+            display: none; // TODO: come back to this later maybe?
+        }
+    }
+
 }
