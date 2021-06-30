@@ -1,0 +1,335 @@
+/*
+    OctoPrint Information Panel for Vertical Screens
+    by Cooper Brislain
+*/
+
+$accent-color: #555;
+$text-color: #FFF;
+$background-color: #333;
+$primary-color: #09D;
+$secondary-clor: #393;
+
+$vertical-screen-min-height: 1200px;
+
+@mixin vertical {
+    @media (min-height: #{$vertical-screen-min-height}) {
+        @content;
+    }
+}
+
+@include vertical {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #page-container-main>.octoprint-container {
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+        width: 100%;
+
+        &>.row {
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 0;
+        }
+    }
+
+// TABS
+
+    #tabs_content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+
+        .tab-pane {
+            display: block;
+        }
+
+        #timelapse {
+            display: none;
+        }
+
+// TEMP
+
+        #temp {
+            flex-basis: 40%;
+            order: 1;
+
+             #temperature-graph {
+                display: none;
+            }
+
+            #temperature-table {
+                margin-top: 12px;
+
+                .btn-input-dec, .btn-input-inc {
+                    display: none;
+                }
+
+                .temperature_tool {
+
+                }
+
+                tbody {
+
+                    tr {
+                        margin: 0;
+                        padding: 0;
+
+                        &:first-child {
+                            th {
+                                font-size: 21px;
+                                border-bottom: 1px solid $accent-color;
+                                padding: 0;
+
+                                &:first-child {
+                                    padding-top: 10px;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                }
+
+                                &.temperature_offset {
+                                    display: none;
+                                }
+
+                                &.temperature_target {
+                                    width: 81px;
+                                    line-height: 37px;
+                                }
+
+                                &.temperature_tool {
+                                    width: 25px;
+                                }
+                            }
+                        }
+
+                        tr th:first-child {
+                            font-size: 18px;
+                            margin-bottom: 0;
+                            width: 25px;
+                        }
+                    }
+
+                    td {
+                        margin: 0;
+                        padding: 0;
+
+                        &.temperature_offset {
+                            display: none;
+                        }
+
+                    }
+                }
+
+                form {
+
+                    input[type=number].input-mini {
+                        min-width: 50px;
+                        width: 50px;
+                    }
+                }
+
+            }
+        }
+
+// CONTROL PANEL
+
+        #control {
+            display: flex;
+            flex-flow: row nowrap;
+
+            .jog-panel {
+                margin-right: 3px;
+            }
+
+            .btn.box,
+            .btn.btn-block.control-box {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            #control-jog-extrusion {
+                width: 100px;
+
+                div.input-append.control-box {
+                    display: flex;
+
+                    h1 {
+                        margin-bottom: 18px;
+                        font-weight: 900;
+                    }
+
+                    input {
+                        flex-grow: 1;
+                        margin: 0;
+                        flex-basis: 70%;
+                        border: 0
+
+                    }
+
+                    span.add-on {
+                        margin: 0;
+                        border-left: 1px solid #777;
+                    }
+                }
+            }
+
+            #control-jog-general {
+                width: 100px;
+            }
+
+            #control-jog-flowrate,
+            #control-jog-feedrate {
+                display: none;
+            }
+
+        }
+
+// WEB CAM
+
+        #webcam_container {
+
+            &+div {
+            }
+        }
+
+// GCODE
+
+        div#gcode.tab-pane {
+            display: none;
+            order: 4;
+
+            #canvas_container {
+                display: none;
+            }
+
+            .row-fluid {
+                .span7 {
+                    width: 100%;
+                    display: flex;
+                    flex-flow: column wrap;
+                }
+
+                .span5 {
+                    display: none;
+                }
+            }
+
+            .canvas_container {
+                display: none;
+
+                &+.layer-buttons {
+                    display: none;
+                }
+
+                .row-fluid:nth-child(2);
+            }
+        }
+
+// TERMINAL
+
+        div#term.tab-pane {
+            order: 3;
+            flex-basis: 95%;
+
+            #terminal-actions-panel {
+                &>a:nth-child(1) {
+                    display: none;
+                }
+
+                br {
+                    display: none;
+                }
+            }
+
+
+            #terminal-filterpanel {
+                width: 100%;
+
+                &>div {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-around;
+                }
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+// GENERAL
+
+    .muted {
+        display: none;
+    }
+
+    .tabbable {
+        display: block;
+        order: 2;
+        margin: 0;
+        width: 100%;
+
+        #tabs {
+            display: none; // TODO: come back to this later maybe?
+        }
+    }
+
+// NAVBAR
+
+    #navbar {
+
+        .navbar-inner {
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .brand {
+            padding-left: 30px;
+        }
+
+        #navbar_plugin_navbartemp {
+            margin-top: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+
+// SIDEBAR
+
+    #sidebar {
+        order: 1;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        #state_wrapper {
+            .accordion-inner {
+
+                *:not(hr) {
+                    display: inline-block;
+                }
+
+                strong {
+                    margin-right: 10px;
+                }
+
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        #connection_wrapper,
+        #sidebar_plugin_action_command_notification_wrapper {
+            display: none;
+        }
+    }
+}

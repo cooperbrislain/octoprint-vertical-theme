@@ -1,0 +1,168 @@
+/*
+    OctoPrint Information Panel for Vertical Screens
+    by Cooper Brislain
+*/
+@media (min-height: 1200px) {
+  * {
+    box-sizing: border-box; }
+
+  body {
+    overflow-x: hidden; }
+
+  #page-container-main > .octoprint-container {
+    margin: 0;
+    padding: 0;
+    margin-top: 55px;
+    width: 100%; }
+    #page-container-main > .octoprint-container > .row {
+      display: flex;
+      flex-flow: column nowrap;
+      margin: 0; }
+
+  #tabs_content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; }
+    #tabs_content .tab-pane {
+      display: block; }
+    #tabs_content #timelapse {
+      display: none; }
+    #tabs_content #temp {
+      flex-basis: 40%;
+      order: 1; }
+      #tabs_content #temp #temperature-graph {
+        display: none; }
+      #tabs_content #temp #temperature-table {
+        margin-top: 12px; }
+        #tabs_content #temp #temperature-table .btn-input-dec, #tabs_content #temp #temperature-table .btn-input-inc {
+          display: none; }
+        #tabs_content #temp #temperature-table tbody tr {
+          margin: 0;
+          padding: 0; }
+          #tabs_content #temp #temperature-table tbody tr:first-child th {
+            font-size: 21px;
+            border-bottom: 1px solid #555;
+            padding: 0; }
+            #tabs_content #temp #temperature-table tbody tr:first-child th:first-child {
+              padding-top: 10px;
+              font-size: 14px;
+              font-weight: bold; }
+            #tabs_content #temp #temperature-table tbody tr:first-child th.temperature_offset {
+              display: none; }
+            #tabs_content #temp #temperature-table tbody tr:first-child th.temperature_target {
+              width: 81px;
+              line-height: 37px; }
+            #tabs_content #temp #temperature-table tbody tr:first-child th.temperature_tool {
+              width: 25px; }
+          #tabs_content #temp #temperature-table tbody tr tr th:first-child {
+            font-size: 18px;
+            margin-bottom: 0;
+            width: 25px; }
+        #tabs_content #temp #temperature-table tbody td {
+          margin: 0;
+          padding: 0; }
+          #tabs_content #temp #temperature-table tbody td.temperature_offset {
+            display: none; }
+        #tabs_content #temp #temperature-table form input[type=number].input-mini {
+          min-width: 50px;
+          width: 50px; }
+    #tabs_content #control {
+      display: flex;
+      flex-flow: row nowrap; }
+      #tabs_content #control .jog-panel {
+        margin-right: 3px;
+        width: 175px; }
+      #tabs_content #control .btn.box,
+      #tabs_content #control .btn.btn-block.control-box {
+        padding-left: 8px;
+        padding-right: 8px; }
+      #tabs_content #control #control-jog-extrusion {
+        width: 100px; }
+        #tabs_content #control #control-jog-extrusion div.input-append.control-box {
+          display: flex; }
+          #tabs_content #control #control-jog-extrusion div.input-append.control-box h1 {
+            margin-bottom: 18px;
+            font-weight: 900; }
+          #tabs_content #control #control-jog-extrusion div.input-append.control-box input {
+            flex-grow: 1;
+            margin: 0;
+            flex-basis: 70%;
+            border: 0; }
+          #tabs_content #control #control-jog-extrusion div.input-append.control-box span.add-on {
+            margin: 0;
+            border-left: 1px solid #777; }
+      #tabs_content #control #control-jog-general {
+        width: 100px; }
+      #tabs_content #control #control-jog-flowrate,
+      #tabs_content #control #control-jog-feedrate {
+        display: none; }
+    #tabs_content div#gcode.tab-pane {
+      display: none;
+      order: 4; }
+      #tabs_content div#gcode.tab-pane #canvas_container {
+        display: none; }
+      #tabs_content div#gcode.tab-pane .row-fluid .span7 {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap; }
+      #tabs_content div#gcode.tab-pane .row-fluid .span5 {
+        display: none; }
+      #tabs_content div#gcode.tab-pane .canvas_container {
+        display: none;
+        .row-fluid: nth-child(2); }
+        #tabs_content div#gcode.tab-pane .canvas_container + .layer-buttons {
+          display: none; }
+    #tabs_content div#term.tab-pane {
+      order: 3;
+      flex-basis: 95%; }
+      #tabs_content div#term.tab-pane #terminal-actions-panel > a:nth-child(1) {
+        display: none; }
+      #tabs_content div#term.tab-pane #terminal-actions-panel br {
+        display: none; }
+      #tabs_content div#term.tab-pane #terminal-filterpanel {
+        width: 100%; }
+        #tabs_content div#term.tab-pane #terminal-filterpanel > div {
+          display: flex;
+          width: 100%;
+          justify-content: space-around; }
+        #tabs_content div#term.tab-pane #terminal-filterpanel br {
+          display: none; }
+
+  .muted {
+    display: none; }
+
+  .tabbable {
+    display: block;
+    order: 2;
+    margin: 0;
+    width: 100%; }
+    .tabbable #tabs {
+      display: none; }
+
+  #navbar .navbar-inner {
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0; }
+  #navbar .brand {
+    padding-left: 30px; }
+  #navbar #navbar_plugin_navbartemp {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px; }
+
+  #sidebar {
+    order: 1;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+    #sidebar #state_wrapper .accordion-inner *:not(hr) {
+      display: inline-block; }
+    #sidebar #state_wrapper .accordion-inner strong {
+      margin-right: 10px; }
+    #sidebar #state_wrapper .accordion-inner br {
+      display: none; }
+    #sidebar #connection_wrapper,
+    #sidebar #sidebar_plugin_action_command_notification_wrapper {
+      display: none; } }
+
+/*# sourceMappingURL=theme.css.map */
