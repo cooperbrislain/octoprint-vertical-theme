@@ -32,7 +32,7 @@ $vertical-screen-min-height: 1200px;
     #page-container-main>.octoprint-container {
         margin: 0;
         padding: 0;
-        margin-top: 55px;
+        margin-top: 55px !important;
         width: 100%;
 
         &>.row {
@@ -50,15 +50,12 @@ $vertical-screen-min-height: 1200px;
         justify-content: space-around;
         padding: 0;
 
-        .tab-pane {
-            display: block;
-        }
-
         #timelapse {
             display: none;
         }
 
-        }
+    }
+
 // TEMP
 
     #temp {
@@ -152,9 +149,20 @@ $vertical-screen-min-height: 1200px;
     #control {
         display: flex;
         flex-flow: row nowrap;
+        justify-content: space-around;
+        flex-basis: 60%;
 
         .jog-panel {
-            margin-right: 3px;
+//          margin-right: 3px;
+           float: none;
+           margin: 0;
+
+            &:nth-child(4) {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                flex-basis: 50%;
+            }
         }
 
         #webcam_container++.jog_panel {
@@ -168,7 +176,7 @@ $vertical-screen-min-height: 1200px;
         }
 
         #control-jog-extrusion {
-            width: 100px;
+            flex-basis: 20%;
 
             div.input-append.control-box {
                 display: flex;
@@ -198,7 +206,7 @@ $vertical-screen-min-height: 1200px;
         }
 
         #control-jog-xy {
-            width: 150px;
+            flex-basis: 50%;
 
             &>div {
                 margin: auto;
@@ -241,6 +249,8 @@ $vertical-screen-min-height: 1200px;
         }
 
         #control-jog-z {
+            flex-basis: 20%;
+
             button.btn {
                 padding: 4px;
                 color: white;
@@ -261,11 +271,11 @@ $vertical-screen-min-height: 1200px;
         }
 
         #control-jog-general {
-            width: 100px;
+            flex-basis: 20%;
         }
 
         #control-jog-flowrate {
-            width: 200px;
+            flex-basis: 20%;
 
             label {
                 float: left;
@@ -329,7 +339,7 @@ $vertical-screen-min-height: 1200px;
 // TERMINAL
 
     #term {
-
+        width: 100%;
         order: 3;
 
         #terminal-actions-panel {
@@ -362,12 +372,19 @@ $vertical-screen-min-height: 1200px;
         }
 
         .terminal {
+            width: 100%;
+
             pre#terminal-output {
                 background-color: black;
                 resize: vertical;
-                min-height: 200px;
+                width: 100%;
                 height: 500px;
+                min-height: 200px;
                 max-height: 1000px;
+                overflow-x: scroll;
+                font-family: "Andale Mono";
+                font-weight: bold;
+                font-size: 13px;
             }
 
         }
@@ -381,21 +398,39 @@ $vertical-screen-min-height: 1200px;
             padding: 10px;
             padding-top: 0;
             padding-bottom: 0;
+
+            div.container {
+                display: flex;
+
+                div.nav-collapse {
+                    display: flex;
+                }
+            }
         }
 
         .brand {
             padding-left: 30px;
         }
 
-        #navbar_plugin_navbartemp {
+        #navbar_plugin_navbartemp { // NAV BAR TEMP
 
             .navbar-text {
                 font-size: 0;
+                border: 1px solid;
+                border-radius: 20px;
+                display: flex;
+                margin-top: 6px;
 
                 span {
                     font-weight: 800;
                     font-size: 16px;
                     padding: 10px;
+                    padding: 1px 10px;
+                }
+
+                #toolInfo {
+                    border-right: 1px solid;
+                    border-left: 1px solid;
                 }
             }
         }
@@ -413,6 +448,11 @@ $vertical-screen-min-height: 1200px;
 // STATE
 
     #state_wrapper {
+
+        .accordion-heading {
+            display: none;
+        }
+
         #state {
             hr {
                 display: none;
@@ -421,7 +461,7 @@ $vertical-screen-min-height: 1200px;
             .accordion-inner {
                 color: black;
                 font-size: 0;
-
+                text-align: center;
 
                 &>*:not(hr, br) {
                     color: white;
@@ -531,6 +571,11 @@ $vertical-screen-min-height: 1200px;
         display: none;
     }
 
+// FILES
+
+#files {
+
+}
 
 // GENERAL ELEMENTS
 
@@ -554,12 +599,23 @@ $vertical-screen-min-height: 1200px;
     }
 
     .footer {
+        max-width: 100%;
+
         ul#footer-links {
             width: 100%;
             display: flex;
             justify-content: center;
             float: none;
         }
+    }
+
+    .accordion-toggle::before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f150';
+    }
+
+    .accordion-toggle.collapsed::before {
+        content: '\f152';
     }
 
 }
