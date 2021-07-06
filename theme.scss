@@ -42,6 +42,218 @@ $vertical-screen-min-height: 1200px;
         }
     }
 
+// NAVBAR
+
+    #navbar {
+
+        .navbar-inner {
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            div.container {
+                display: flex;
+                justify-content: space-between;
+                flex-flow: row nowrap;
+
+                div.nav-collapse {
+                    display: flex;
+                }
+            }
+        }
+
+        .brand {
+            padding-left: 30px;
+        }
+
+        #navbar_plugin_navbartemp { // NAV BAR TEMP
+
+            .navbar-text {
+                font-size: 0;
+                border: 1px solid;
+                border-radius: 20px;
+                display: flex;
+                margin-top: 6px;
+
+                span {
+                    font-weight: 800;
+                    font-size: 16px;
+                    padding: 10px;
+                    padding: 1px 10px;
+                }
+
+                #toolInfo {
+                    border-right: 1px solid;
+                    border-left: 1px solid;
+                }
+            }
+        }
+    }
+
+// SIDEBAR
+
+    #sidebar {
+        order: 1;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+// STATE
+
+    #state_wrapper {
+
+        .accordion-heading {
+            display: none;
+        }
+
+        #state {
+            hr {
+                display: none;
+            }
+
+            [data-test-id="sidebar-state-content"] {
+                color: black;
+                font-size: 0;
+                text-align: center;
+
+                &>*:not(hr, br) {
+                    color: white;
+                    font-size: 12px;
+                    display: inline-block;
+                }
+
+                strong {
+                    margin-right: 10px;
+                    font-weight: 900;
+                    font-size: 18px;
+                }
+
+                span {
+                    font-size: 0;
+                }
+
+                span::before {
+                    font-family: "Font Awesome 5 Free" !important;
+                    font-size: 20px !important;
+                    padding: 10px;
+                    position: relative;
+                    top: 2px;
+                }
+
+                // all the info in this box is contained
+                // in a series of unstructured span and
+                // strong tags.
+                &>* {
+                        &:nth-child(1),
+                    &:nth-child(3),
+    //                 &:nth-child(7),
+                    &:nth-child(9),
+                    &:nth-child(6),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(10),
+                    &:nth-child(14),
+                    &:nth-child(15),
+                    &:nth-child(16),
+                    &:nth-child(17),
+                    &:nth-child(18),
+                    &:nth-child(19),
+                    &:nth-child(21),
+                    &:nth-child(22),
+                    &:nth-child(25),
+                    &:nth-child(26),
+                    &:nth-child(29),
+                    &:nth-child(33),
+                    &:nth-child(36),
+                    &:nth-child(37) {
+                        display: none;
+                    }
+
+                    &:nth-child(11)::before { // Upload
+                        content: '\f093';
+                    }
+
+                    &:nth-child(23)::before { // Estimated Total Time
+                        content: '\f017';
+                    }
+
+                    &:nth-child(27)::before { // Time Elapsed
+                        content: '\f252';
+                    }
+
+                    &:nth-child(7)::before { // File
+                        content: '\f15b';
+                    }
+
+                    &:nth-child(30)::before { // Time Remaining
+                        content: '\f253';
+                    }
+
+                    &:nth-child(34)::before {
+                        content: '\f00b';
+                    }
+                }
+
+                .print-control {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: row nowrap;
+
+                    button.btn {
+                        color: white;
+                        font-weight: bold;
+                        flex-basis: 30%;
+                        margin: 0;
+                        height: 55px;
+                    }
+
+                    #job_pause {
+                        background-color: green; // TODO: more specific
+                    }
+
+                    #job_cancel {
+                        background-color: red; // TODO: more specific
+                    }
+                }
+            }
+        }
+    }
+
+    #connection_wrapper,
+    #sidebar_plugin_action_command_notification_wrapper {
+        display: none;
+    }
+
+// FILES
+
+    #files {
+        .gcode_files {
+            .entry {
+                display: flex;
+
+                div {
+                    word-wrap: nowrap;
+                    overflow: hidden;
+                    text-overflow: clip;
+                }
+
+                .title {
+                    font-weight: bold;
+                    flex-basis: 30%;
+                }
+
+                .internal {
+                    flex-basis: 30%;
+                }
+            }
+
+            .entry.folder {
+
+            }
+        }
+    }
+
 // TABS
 
     #tabs_content {
@@ -341,6 +553,9 @@ $vertical-screen-min-height: 1200px;
     #term {
         width: 100%;
         order: 3;
+        display: block;
+        margin-right: 5px;
+
 
         #terminal-actions-panel {
             &>a:nth-child(1) {
@@ -389,193 +604,6 @@ $vertical-screen-min-height: 1200px;
 
         }
     }
-
-// NAVBAR
-
-    #navbar {
-
-        .navbar-inner {
-            padding: 10px;
-            padding-top: 0;
-            padding-bottom: 0;
-
-            div.container {
-                display: flex;
-
-                div.nav-collapse {
-                    display: flex;
-                }
-            }
-        }
-
-        .brand {
-            padding-left: 30px;
-        }
-
-        #navbar_plugin_navbartemp { // NAV BAR TEMP
-
-            .navbar-text {
-                font-size: 0;
-                border: 1px solid;
-                border-radius: 20px;
-                display: flex;
-                margin-top: 6px;
-
-                span {
-                    font-weight: 800;
-                    font-size: 16px;
-                    padding: 10px;
-                    padding: 1px 10px;
-                }
-
-                #toolInfo {
-                    border-right: 1px solid;
-                    border-left: 1px solid;
-                }
-            }
-        }
-    }
-
-// SIDEBAR
-
-    #sidebar {
-        order: 1;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-// STATE
-
-    #state_wrapper {
-
-        .accordion-heading {
-            display: none;
-        }
-
-        #state {
-            hr {
-                display: none;
-            }
-
-            .accordion-inner {
-                color: black;
-                font-size: 0;
-                text-align: center;
-
-                &>*:not(hr, br) {
-                    color: white;
-                    font-size: 12px;
-                    display: inline-block;
-                }
-
-                strong {
-                    margin-right: 10px;
-                    font-weight: 900;
-                    font-size: 18px;
-                }
-
-                span {
-                    font-size: 0;
-                }
-
-                span::before {
-                    font-family: "Font Awesome 5 Free" !important;
-                    font-size: 20px !important;
-                    padding: 10px;
-                    position: relative;
-                    top: 2px;
-                }
-
-                // all the info in this box is contained
-                // in a series of unstructured span and
-                // strong tags.
-                &>* {
-                        &:nth-child(1),
-                    &:nth-child(3),
-    //                 &:nth-child(7),
-                    &:nth-child(9),
-                    &:nth-child(6),
-                    &:nth-child(4),
-                    &:nth-child(5),
-                    &:nth-child(10),
-                    &:nth-child(14),
-                    &:nth-child(15),
-                    &:nth-child(16),
-                    &:nth-child(17),
-                    &:nth-child(18),
-                    &:nth-child(19),
-                    &:nth-child(21),
-                    &:nth-child(22),
-                    &:nth-child(25),
-                    &:nth-child(26),
-                    &:nth-child(29),
-                    &:nth-child(33),
-                    &:nth-child(36),
-                    &:nth-child(37) {
-                        display: none;
-                    }
-
-                    &:nth-child(11)::before { // Upload
-                        content: '\f093';
-                    }
-
-                    &:nth-child(23)::before { // Estimated Total Time
-                        content: '\f017';
-                    }
-
-                    &:nth-child(27)::before { // Time Elapsed
-                        content: '\f252';
-                    }
-
-                    &:nth-child(7)::before { // File
-                        content: '\f15b';
-                    }
-
-                    &:nth-child(30)::before { // Time Remaining
-                        content: '\f253';
-                    }
-
-                    &:nth-child(34)::before {
-                        content: '\f00b';
-                    }
-                }
-
-                .print-control {
-                    display: flex;
-                    justify-content: space-around;
-                    flex-flow: row nowrap;
-
-                    button.btn {
-                        color: white;
-                        font-weight: bold;
-                        flex-basis: 30%;
-                        margin: 0;
-                        height: 55px;
-                    }
-
-                    #job_pause {
-                        background-color: green; // TODO: more specific
-                    }
-
-                    #job_cancel {
-                        background-color: red; // TODO: more specific
-                    }
-                }
-            }
-        }
-    }
-
-    #connection_wrapper,
-    #sidebar_plugin_action_command_notification_wrapper {
-        display: none;
-    }
-
-// FILES
-
-#files {
-
-}
 
 // GENERAL ELEMENTS
 

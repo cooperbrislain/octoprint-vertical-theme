@@ -20,6 +20,108 @@
       flex-flow: column nowrap;
       margin: 0; }
 
+  #navbar .navbar-inner {
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0; }
+    #navbar .navbar-inner div.container {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row nowrap; }
+      #navbar .navbar-inner div.container div.nav-collapse {
+        display: flex; }
+  #navbar .brand {
+    padding-left: 30px; }
+  #navbar #navbar_plugin_navbartemp .navbar-text {
+    font-size: 0;
+    border: 1px solid;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 6px; }
+    #navbar #navbar_plugin_navbartemp .navbar-text span {
+      font-weight: 800;
+      font-size: 16px;
+      padding: 10px;
+      padding: 1px 10px; }
+    #navbar #navbar_plugin_navbartemp .navbar-text #toolInfo {
+      border-right: 1px solid;
+      border-left: 1px solid; }
+
+  #sidebar {
+    order: 1;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+
+  #state_wrapper .accordion-heading {
+    display: none; }
+  #state_wrapper #state hr {
+    display: none; }
+  #state_wrapper #state [data-test-id="sidebar-state-content"] {
+    color: black;
+    font-size: 0;
+    text-align: center; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:not(hr, br) {
+      color: white;
+      font-size: 12px;
+      display: inline-block; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] strong {
+      margin-right: 10px;
+      font-weight: 900;
+      font-size: 18px; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] span {
+      font-size: 0; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] span::before {
+      font-family: "Font Awesome 5 Free" !important;
+      font-size: 20px !important;
+      padding: 10px;
+      position: relative;
+      top: 2px; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(1), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(3), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(9), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(6), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(4), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(5), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(10), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(14), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(15), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(16), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(17), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(18), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(19), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(21), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(22), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(25), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(26), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(29), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(33), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(36), #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(37) {
+      display: none; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(11)::before {
+      content: '\f093'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(23)::before {
+      content: '\f017'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(27)::before {
+      content: '\f252'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(7)::before {
+      content: '\f15b'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(30)::before {
+      content: '\f253'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] > *:nth-child(34)::before {
+      content: '\f00b'; }
+    #state_wrapper #state [data-test-id="sidebar-state-content"] .print-control {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row nowrap; }
+      #state_wrapper #state [data-test-id="sidebar-state-content"] .print-control button.btn {
+        color: white;
+        font-weight: bold;
+        flex-basis: 30%;
+        margin: 0;
+        height: 55px; }
+      #state_wrapper #state [data-test-id="sidebar-state-content"] .print-control #job_pause {
+        background-color: green; }
+      #state_wrapper #state [data-test-id="sidebar-state-content"] .print-control #job_cancel {
+        background-color: red; }
+
+  #connection_wrapper,
+  #sidebar_plugin_action_command_notification_wrapper {
+    display: none; }
+
+  #files .gcode_files .entry {
+    display: flex; }
+    #files .gcode_files .entry div {
+      word-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: clip; }
+    #files .gcode_files .entry .title {
+      font-weight: bold;
+      flex-basis: 30%; }
+    #files .gcode_files .entry .internal {
+      flex-basis: 30%; }
+
   #tabs_content {
     display: flex;
     flex-flow: row wrap;
@@ -182,7 +284,9 @@
 
   #term {
     width: 100%;
-    order: 3; }
+    order: 3;
+    display: block;
+    margin-right: 5px; }
     #term #terminal-actions-panel > a:nth-child(1) {
       display: none; }
     #term #terminal-actions-panel br {
@@ -210,94 +314,6 @@
         font-family: "Andale Mono";
         font-weight: bold;
         font-size: 13px; }
-
-  #navbar .navbar-inner {
-    padding: 10px;
-    padding-top: 0;
-    padding-bottom: 0; }
-    #navbar .navbar-inner div.container {
-      display: flex; }
-      #navbar .navbar-inner div.container div.nav-collapse {
-        display: flex; }
-  #navbar .brand {
-    padding-left: 30px; }
-  #navbar #navbar_plugin_navbartemp .navbar-text {
-    font-size: 0;
-    border: 1px solid;
-    border-radius: 20px;
-    display: flex;
-    margin-top: 6px; }
-    #navbar #navbar_plugin_navbartemp .navbar-text span {
-      font-weight: 800;
-      font-size: 16px;
-      padding: 10px;
-      padding: 1px 10px; }
-    #navbar #navbar_plugin_navbartemp .navbar-text #toolInfo {
-      border-right: 1px solid;
-      border-left: 1px solid; }
-
-  #sidebar {
-    order: 1;
-    width: 100%;
-    padding: 0;
-    margin: 0; }
-
-  #state_wrapper .accordion-heading {
-    display: none; }
-  #state_wrapper #state hr {
-    display: none; }
-  #state_wrapper #state .accordion-inner {
-    color: black;
-    font-size: 0;
-    text-align: center; }
-    #state_wrapper #state .accordion-inner > *:not(hr, br) {
-      color: white;
-      font-size: 12px;
-      display: inline-block; }
-    #state_wrapper #state .accordion-inner strong {
-      margin-right: 10px;
-      font-weight: 900;
-      font-size: 18px; }
-    #state_wrapper #state .accordion-inner span {
-      font-size: 0; }
-    #state_wrapper #state .accordion-inner span::before {
-      font-family: "Font Awesome 5 Free" !important;
-      font-size: 20px !important;
-      padding: 10px;
-      position: relative;
-      top: 2px; }
-    #state_wrapper #state .accordion-inner > *:nth-child(1), #state_wrapper #state .accordion-inner > *:nth-child(3), #state_wrapper #state .accordion-inner > *:nth-child(9), #state_wrapper #state .accordion-inner > *:nth-child(6), #state_wrapper #state .accordion-inner > *:nth-child(4), #state_wrapper #state .accordion-inner > *:nth-child(5), #state_wrapper #state .accordion-inner > *:nth-child(10), #state_wrapper #state .accordion-inner > *:nth-child(14), #state_wrapper #state .accordion-inner > *:nth-child(15), #state_wrapper #state .accordion-inner > *:nth-child(16), #state_wrapper #state .accordion-inner > *:nth-child(17), #state_wrapper #state .accordion-inner > *:nth-child(18), #state_wrapper #state .accordion-inner > *:nth-child(19), #state_wrapper #state .accordion-inner > *:nth-child(21), #state_wrapper #state .accordion-inner > *:nth-child(22), #state_wrapper #state .accordion-inner > *:nth-child(25), #state_wrapper #state .accordion-inner > *:nth-child(26), #state_wrapper #state .accordion-inner > *:nth-child(29), #state_wrapper #state .accordion-inner > *:nth-child(33), #state_wrapper #state .accordion-inner > *:nth-child(36), #state_wrapper #state .accordion-inner > *:nth-child(37) {
-      display: none; }
-    #state_wrapper #state .accordion-inner > *:nth-child(11)::before {
-      content: '\f093'; }
-    #state_wrapper #state .accordion-inner > *:nth-child(23)::before {
-      content: '\f017'; }
-    #state_wrapper #state .accordion-inner > *:nth-child(27)::before {
-      content: '\f252'; }
-    #state_wrapper #state .accordion-inner > *:nth-child(7)::before {
-      content: '\f15b'; }
-    #state_wrapper #state .accordion-inner > *:nth-child(30)::before {
-      content: '\f253'; }
-    #state_wrapper #state .accordion-inner > *:nth-child(34)::before {
-      content: '\f00b'; }
-    #state_wrapper #state .accordion-inner .print-control {
-      display: flex;
-      justify-content: space-around;
-      flex-flow: row nowrap; }
-      #state_wrapper #state .accordion-inner .print-control button.btn {
-        color: white;
-        font-weight: bold;
-        flex-basis: 30%;
-        margin: 0;
-        height: 55px; }
-      #state_wrapper #state .accordion-inner .print-control #job_pause {
-        background-color: green; }
-      #state_wrapper #state .accordion-inner .print-control #job_cancel {
-        background-color: red; }
-
-  #connection_wrapper,
-  #sidebar_plugin_action_command_notification_wrapper {
-    display: none; }
 
   button.btn {
     font-weight: bold; }
