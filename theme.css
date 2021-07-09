@@ -314,6 +314,8 @@
         font-family: "Andale Mono";
         font-weight: bold;
         font-size: 13px; }
+        #term .terminal pre#terminal-output span.muted {
+          display: none; }
 
   button.btn {
     font-weight: bold; }

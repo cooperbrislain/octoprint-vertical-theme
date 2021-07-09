@@ -600,6 +600,10 @@ $vertical-screen-min-height: 1200px;
                 font-family: "Andale Mono";
                 font-weight: bold;
                 font-size: 13px;
+
+                span.muted {
+                    display: none;
+                }
             }
 
         }
