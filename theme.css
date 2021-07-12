@@ -316,6 +316,12 @@
         font-size: 13px; }
         #term .terminal pre#terminal-output span.muted {
           display: none; }
+    #term .terminal-autoscroll::before {
+      font-family: "Font Awesome 5 Free";
+      content: '\f204';
+      margin-right: 5px; }
+    #term .terminal-autoscroll.active::before {
+      content: '\f205'; }
 
   button.btn {
     font-weight: bold; }

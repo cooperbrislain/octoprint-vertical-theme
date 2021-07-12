@@ -11,6 +11,8 @@ $secondary-clor: #393;
 $color-blue: #0073ff;
 $color-plum: #332639;
 
+$FA: "Font Awesome 5 Free";
+
 $vertical-screen-min-height: 1200px;
 
 @mixin vertical {
@@ -605,8 +607,21 @@ $vertical-screen-min-height: 1200px;
                     display: none;
                 }
             }
-
         }
+
+        .terminal-autoscroll {
+            &::before {
+                font-family: $FA;
+                content: '\f204';
+                margin-right: 5px;
+            }
+            &.active {
+                &::before {
+                    content: '\f205';
+                }
+            }
+        }
+
     }
 
 // GENERAL ELEMENTS
