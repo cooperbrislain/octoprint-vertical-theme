@@ -287,16 +287,20 @@
     order: 3;
     display: block;
     margin-right: 5px; }
+    #term > .row-fluid {
+      position: absolute; }
     #term #terminal-actions-panel > a:nth-child(1) {
       display: none; }
     #term #terminal-actions-panel br {
       display: none; }
     #term #terminal-filterpanel {
-      width: 100%; }
+      position: absolute;
+      float: none;
+      top: -564px;
+      right: 0px;
+      width: 200px; }
       #term #terminal-filterpanel > div {
-        display: flex;
-        width: 100%;
-        justify-content: space-around; }
+        display: block; }
       #term #terminal-filterpanel label > span {
         font-size: 10px; }
       #term #terminal-filterpanel br {
@@ -340,10 +344,12 @@
   .footer {
     max-width: 100%; }
     .footer ul#footer-links {
-      width: 100%;
       display: flex;
       justify-content: center;
-      float: none; }
+      float: none;
+      max-width: 80%;
+      justify-content: space-around;
+      margin: auto; }
 
   .accordion-toggle::before {
     font-family: "Font Awesome 5 Free";

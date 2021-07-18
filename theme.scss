@@ -558,6 +558,9 @@ $vertical-screen-min-height: 1200px;
         display: block;
         margin-right: 5px;
 
+        &>.row-fluid {
+            position: absolute;
+        }
 
         #terminal-actions-panel {
             &>a:nth-child(1) {
@@ -571,12 +574,14 @@ $vertical-screen-min-height: 1200px;
 
 
         #terminal-filterpanel {
-            width: 100%;
+            position: absolute;
+            float: none;
+            top: -564px;
+            right: 0px;
+            width: 200px;
 
             &>div {
-                display: flex;
-                width: 100%;
-                justify-content: space-around;
+                display: block;
             }
 
             label>span {
@@ -649,10 +654,12 @@ $vertical-screen-min-height: 1200px;
         max-width: 100%;
 
         ul#footer-links {
-            width: 100%;
             display: flex;
             justify-content: center;
             float: none;
+            max-width: 80%;
+            justify-content: space-around;
+            margin: auto;
         }
     }
 
