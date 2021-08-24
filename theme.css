@@ -2,6 +2,9 @@
     OctoPrint Information Panel for Vertical Screens
     by Cooper Brislain
 */
+
+@use 'base.scss';
+
 @media (min-height: 1200px) {
   * {
     box-sizing: border-box; }

@@ -1,0 +1,16 @@
+$accent-color: #555;
+$text-color: #FFF;
+$background-color: #333;
+$primary-color: #09D;
+$secondary-color: #393;
+$color-blue: #0073ff;
+$color-plum: #332639;
+
+$FA: "Font Awesome 5 Free";
+
+$vertical-screen-min-height: 1200px;
+
+@use 'vertical.scss';
+
+@use 'theme.scss'
+@use 'vertical.scss'
